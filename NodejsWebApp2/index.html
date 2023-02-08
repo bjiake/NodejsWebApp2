@@ -11,6 +11,19 @@
     <input type="text" id="inputObject"/>
     <button onclick="calculate()">Вычислить</button>
     <script>
+        let student = {
+            FirstName: "Tom",
+            LastName: "Jhonson",
+            Otchestvo: "Otch",
+            Bithsday: "19.05.2003",
+            class: 5,
+            lessons: ["Math", "Language", "QualityMath"],
+            display: function () {
+                console.log(student.lessons);
+                console.log(student.class);
+                console.log(student.LastName);
+            }
+        }
         var students = [
             ["Dongak", "AiBelek", "Pi", "211"],
             ["Mgr", "febab", "Pi", "215"],
@@ -20,10 +33,10 @@
             ["lida", "asad", "Pi", "212"],
         ];
         function calculate() {
-            var text = document.getElementById("inputObject");
-            var value = String(text.value);
-
-            checkGroup(value);
+            //var text = document.getElementById("inputObject");
+            //var value = String(text.value);
+            student.display();
+            //checkGroup(value);
         }
         function checkGroup(n) {
             for (var i = 0; i < students.length + 1; i++) {                

@@ -11,23 +11,31 @@
     <input type="text" id="inputObject"/>
     <button onclick="calculate()">Вычислить</button>
     <script>
+        var students = [
+            ["Dongak", "AiBelek", "Pi", "211"],
+            ["Mgr", "febab", "Pi", "215"],
+            ["Loze", "keraf", "Pi", "211"],
+            ["kaif", "rakaf", "Pi", "212"],
+            ["aioe", "ladaf", "Pi", "216"],
+            ["lida", "asad", "Pi", "212"],
+        ];
         function calculate() {
             var text = document.getElementById("inputObject");
-            var value = Number(text.value);
-            if (value % 2 == 0) {
-                alert(factorial(value));
-            }
-            else {
-                alert(average(value));
-            }
+            var value = String(text.value);
+
+            checkGroup(value);
         }
-        function average(n) {
-            var sum = 0;
-            for (var i = 1; i < n + 1; i++) {
-                sum = sum + i;
+        function checkGroup(n) {
+            for (var i = 0; i < students.length + 1; i++) {
+
+                
+                if (students[i][3] == n) {
+                    alert(students[i]);
+                }
+                else {
+                    console.log(students[i]);
+                }
             }
-            alert(sum);
-            return sum / n;
         }
         function factorial(n) {
             if (n == 0) {

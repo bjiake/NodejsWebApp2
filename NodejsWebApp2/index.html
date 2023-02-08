@@ -20,7 +20,7 @@
             lessons: ["Math", "Language", "QualityMath"],
             srokObucheniya: 9,
             upClass: function () {
-                if (this.class > this.srokObucheniya) {
+                if (this.class >= this.srokObucheniya) {
                     alert("Максимальный класс достигнут");
                 }
                 else {
@@ -49,6 +49,7 @@
                 street: "Moskow 44"
             }
         }
+        /*
         var students = [
             ["Dongak", "AiBelek", "Pi", "211"],
             ["Mgr", "febab", "Pi", "215"],
@@ -57,6 +58,7 @@
             ["aioe", "ladaf", "Pi", "216"],
             ["lida", "asad", "Pi", "212"],
         ];
+        */
         function calculate() {
             var text = document.getElementById("inputObject");
             var value = Number(text.value);
@@ -64,6 +66,7 @@
             //student.display();
             //checkYear(value);
         }
+        /*
         function checkYear(n) {
             if (n < student.Bithsday && n > student.Bithsday - 200) {
                 student.Bithsday = n;
@@ -73,6 +76,7 @@
                 alert("Неверный год");
             }
         }
+        */
     </script>
 </body>
 </html>

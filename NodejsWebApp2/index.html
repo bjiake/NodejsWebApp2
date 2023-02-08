@@ -15,7 +15,7 @@
             FirstName: "Tom",
             LastName: "Jhonson",
             Otchestvo: "Otch",
-            Bithsday: "19.05.2003",
+            Bithsday: 2003,
             class: 5,
             lessons: ["Math", "Language", "QualityMath"],
             display: function () {
@@ -49,19 +49,18 @@
             ["lida", "asad", "Pi", "212"],
         ];
         function calculate() {
-            //var text = document.getElementById("inputObject");
-            //var value = String(text.value);
-            student.display();
-            //checkGroup(value);
+            var text = document.getElementById("inputObject");
+            var value = Number(text.value);
+            //student.display();
+            checkYear(value);
         }
-        function checkGroup(n) {
-            for (var i = 0; i < students.length + 1; i++) {                
-                if (students[i][3] == n) {
-                    alert(students[i]);
-                }
-                else {
-                    console.log(students[i]);
-                }
+        function checkYear(n) {
+            if (n < student.Bithsday && n > student.Bithsday - 200) {
+                student.Bithsday = n;
+                alert("Год перезаписан на: "+ student.Bithsday);
+            }
+            else {
+                alert("Неверный год");
             }
         }
     </script>

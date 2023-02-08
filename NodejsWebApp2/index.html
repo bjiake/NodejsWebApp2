@@ -8,7 +8,7 @@
 <body>
     <!--1 задача-->
     <h1>Расписание</h1>
-    <input type="text" id="inputObject"/>
+    <input type="text" id="inputObject" />
     <button onclick="calculate()">Вычислить</button>
     <script>
         let student = {
@@ -18,7 +18,16 @@
             Bithsday: 2003,
             class: 5,
             lessons: ["Math", "Language", "QualityMath"],
-            display: function () {
+            srokObucheniya: 9,
+            upClass: function () {
+                if (this.class > this.srokObucheniya) {
+                    alert("Максимальный класс достигнут");
+                }
+                else {
+                    this.class = this.class + 1;
+                }
+            },
+            Display: function () {
                 /*
                 console.log(student.lessons);
                 console.log(student.class);
@@ -32,12 +41,12 @@
                 country: "russia",
                 city: "kemerovo",
                 idHoume: "54",
-                idKvarti:"545"
+                idKvarti: "545"
             },
             projivanie: {
                 region: "tyva",
                 punct: "kyzyl",
-                street:"Moskow 44"
+                street: "Moskow 44"
             }
         }
         var students = [
@@ -51,13 +60,14 @@
         function calculate() {
             var text = document.getElementById("inputObject");
             var value = Number(text.value);
+            student.upClass();
             //student.display();
-            checkYear(value);
+            //checkYear(value);
         }
         function checkYear(n) {
             if (n < student.Bithsday && n > student.Bithsday - 200) {
                 student.Bithsday = n;
-                alert("Год перезаписан на: "+ student.Bithsday);
+                alert("Год перезаписан на: " + student.Bithsday);
             }
             else {
                 alert("Неверный год");

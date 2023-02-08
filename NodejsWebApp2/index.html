@@ -28,6 +28,15 @@
                 */
                 alert(JSON.stringify(student));
             },
+            checkYear: function checkYear(n) {
+                if (n < student.Bithsday && n > student.Bithsday - 200) {
+                    student.Bithsday = n;
+                    alert("Год перезаписан на: " + student.Bithsday);
+                }
+                else {
+                    alert("Неверный год");
+                }
+            },
             propiska: {
                 country: "russia",
                 city: "kemerovo",
@@ -40,6 +49,7 @@
                 street:"Moskow 44"
             }
         }
+        /*
         var students = [
             ["Dongak", "AiBelek", "Pi", "211"],
             ["Mgr", "febab", "Pi", "215"],
@@ -48,21 +58,16 @@
             ["aioe", "ladaf", "Pi", "216"],
             ["lida", "asad", "Pi", "212"],
         ];
+        */
         function calculate() {
             var text = document.getElementById("inputObject");
             var value = Number(text.value);
             //student.display();
-            checkYear(value);
+            student.checkYear(value);
         }
-        function checkYear(n) {
-            if (n < student.Bithsday && n > student.Bithsday - 200) {
-                student.Bithsday = n;
-                alert("Год перезаписан на: "+ student.Bithsday);
-            }
-            else {
-                alert("Неверный год");
-            }
-        }
+        
+       
+        
     </script>
 </body>
 </html>
